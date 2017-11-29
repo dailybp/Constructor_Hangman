@@ -1,5 +1,5 @@
 var letter = require('./letterModule.js');
-function word(str){
+function Word(str){
   var word = str;
   this.word = wrd;
   this.letter = [];
@@ -24,6 +24,28 @@ function word(str){
   };
 
   this.wasLetterFound = function(guessedLetter){
-    var outputTo
-  }
+    var outputToReturn = 0;
+
+    this.letters.forEach(function(ltr){
+      if(ltr.letter === guessedLetter){
+        ltr.appear = true;
+        whatToReturn++;
+      }
+    })
+
+    return whatToReturn;
+  };
+
+  this.wordRender = function(){
+    var display = '';
+
+    that.letters.forEach(function(ltr){
+      var currentLetter = ltr.renderLetter();
+      display += currentLetter;
+    });
+
+    return display;
+  };
 }
+
+module.exports = Word;
